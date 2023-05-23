@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  flask:
+    build:
+      context: .
+    image: goodwin954/test1_quiz
+    ports:
+      - 80:80
+    depends_on:
+      pg:
+        condition: service_healthy
+  pg:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: flask
+      POSTGRES_PASSWORD: flask
+      POSTGRES_DB: flask
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U flask" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
