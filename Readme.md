@@ -50,11 +50,11 @@ width="700" alt="Переходим в Docker и убеждаемся, что в
 alt="Запускаем Postman"></p>
 
 ### Устанавливаем параметры запроса
-тип: <span style="color:yellow"><b>POST</b></span>
-<br>адрес <b><a href = http://localhost:8020/questions/>http://localhost:8020/questions/
-<br>контент: <span style="color:yellow"><b>body --> row</b></span>
-<br>тип контента: <span style="color:yellow"><b>JSON</b></span>
-<br>параметры: <span style="color:yellow"><b>{"questions_num": "ЧИСЛО ОТ 0 ДО 500"}</b></span>
+тип: <b><i>POST</u></b>
+<br>адрес: http://localhost:8020/questions/
+<br>контент: <i><b>body --> row</b></u>
+<br>тип контента: <i><b>JSON</b></u>
+<br>параметры: <i><b>{"questions_num": "ЧИСЛО ОТ 0 ДО 500"}</b></u>
 
 <p><a href="https://i2.paste.pics/c74b2217d40140185ce2fd61857df78e.png">
 <img src="https://i2.paste.pics/c74b2217d40140185ce2fd61857df78e.png"
@@ -67,14 +67,14 @@ width="120" alt="SEND"></p>
 При первой попытке запроса, получаем пустой объект, так как база данных пустая.
 <br>При последующих запросах, приложение будет отправлять последний сохраненный вопрос.
 
-## Завершаем приложение:
+### Завершаем приложение:
 ```docker compose stop```
 <br>
 <br>
 <hr>
 
 # Доступ к базе данных
-Для доступа к сохраненным данным можно использовать программу
+Для доступа к базе данных можно использовать программу
 [pgAdmin](https://www.pgadmin.org/download/).
 
 ## Создаем новое подключение
@@ -91,10 +91,10 @@ width="400" alt="Вкладка 'General'"></a></p>
 
 
 ### Вкладка 'Connection'
-user: <span style="color:yellow"><b>quiz</b></span>
-<br>password: <span style="color:yellow"><b>quiz</b></span>
-<br>host: <span style="color:yellow"><b>localhost</b></span>
-<br>port: <span style="color:yellow"><b>5434</b></span>
+user: <i><b>quiz</b></u>
+<br>password: <i><b>quiz</b></u>
+<br>host: <i><b>localhost</b></u>
+<br>port: <i><b>5434</b></u>
 
 <p><a href="https://i2.paste.pics/278bced929716253a8d1b145472763ab.png">
 <img src="https://i2.paste.pics/278bced929716253a8d1b145472763ab.png"
@@ -105,18 +105,17 @@ width="400" alt="Вкладка 'Connection'"></a></p>
 width="120" alt="Сохраняем"></p>
 
 ## Получаем данные
-Переходим к таблице 'quiz'
+### Переходим к таблице 'quiz'
 <p><a href="https://i2.paste.pics/c272a61826f05301b1d821adf690c587.png">
 <img src="https://i2.paste.pics/c272a61826f05301b1d821adf690c587.png"
 width="700" alt="Переходим к таблице 'quiz'"></a></p>
 
-Выбираем пункт 'View Data --> All Rows'
+### Выбираем пункт 'View Data --> All Rows'
 <p><a href="https://i2.paste.pics/931edde38f73d0e248b839f8fa092346.png">
 <img src="https://i2.paste.pics/931edde38f73d0e248b839f8fa092346.png"
 width="400" alt="Выбираем пункт 'View Data --> All Rows'"></a></p>
 
-
-Получаем данные:
+### Получаем данные:
 <p><a href="https://i2.paste.pics/44de8cb3d51e49073691e2b6ed5c6bca.png">
 <img src="https://i2.paste.pics/44de8cb3d51e49073691e2b6ed5c6bca.png"
 width="700" alt="Получаем данные"></a></p>
