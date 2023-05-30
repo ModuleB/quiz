@@ -71,7 +71,7 @@ class QuestionsView(Resource):
         if last_question:
             response = jsonify({"previous_question": last_question.question})
         else:
-            response = jsonify()
+            response = jsonify([])
 
         # Возвращаем 'last_question'
         return response
