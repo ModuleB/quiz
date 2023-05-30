@@ -14,13 +14,12 @@ if __name__ == "__main__":
     app.config.from_object(config)
     app.app_context().push()
 
-    # Регистрация restx
+    # Регистрация restx и неймспейсов
     api = Api(app)
-    # Регистрация неймспейсов
     api.add_namespace(questions_ns)
 
     # Запуск
     if app.config.get("FLASK_ENV") == "production":
-        serve(app, host="0.0.0.0", port=80)
+        serve(app, host="0.0.0.0", port=8020)
     else:
-        app.run(host="0.0.0.0", port=80)
+        app.run(host="0.0.0.0", port=8020)
