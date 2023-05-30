@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  quiz:
+  flask_quiz:
     build:
       context: .
     image: goodwin954/test1_quiz
