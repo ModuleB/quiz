@@ -1,25 +1,28 @@
 version: "3.9"
 
 services:
-  flask:
+  quiz:
     build:
       context: .
     image: goodwin954/test1_quiz
     ports:
-      - 80:80
+      - 8020:8020
     depends_on:
       pg:
         condition: service_healthy
-  pg:
+  pg_quiz:
     image: postgres:latest
     environment:
-      POSTGRES_USER: flask
-      POSTGRES_PASSWORD: flask
-      POSTGRES_DB: flask
+      POSTGRES_USER: quiz
+      POSTGRES_PASSWORD: quiz
+      POSTGRES_DB: quiz
+      PGPORT: 5434
+    ports:
+        - 5434:5434
     volumes:
       - ./pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U flask" ]
-      interval: 5s
-      timeout: 5s
+      test: [ "CMD-SHELL", "pg_isready -U quiz" ]
+      interval: 10s
+      timeout: 10s
       retries: 5
